@@ -1,5 +1,3 @@
-const from = require("from2");
-
 module.exports = function() {
   throw new Error("call .point(), .lineString(), or .polygon() instead");
 };
@@ -17,16 +15,6 @@ module.exports.point = function(count, bbox) {
     features.push(feature(bbox ? point(position(bbox)) : point()));
   }
   return collection(features);
-};
-
-module.exports.pointStream = function(count, bbox) {
-  return from.obj(function(size, next) {
-    if (--count) {
-      next(null, feature(bbox ? point(position(bbox)) : point()));
-    } else {
-      next(null, null);
-    }
-  });
 };
 
 module.exports.polygon = function(
