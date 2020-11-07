@@ -29,10 +29,6 @@
     "standard-version": "^9.0.0",
     "tap": "^14.10.7"
   },
-  "dependencies": {
-    "from2": "^2.1.0",
-    "geojson-stream": "0.1.0"
-  },
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
